@@ -12,7 +12,7 @@ namespace TicTacToe
             char userLetter = TicTacToeGame.ChooseUserLetter();         
             int userMove = TicTacToeGame.UserMove(board);
             TicTacToeGame.Player player = TicTacToeGame.GetWhoStartsFirst();
-            
+            Console.WriteLine("Check if won " + TicTacToeGame.IsWinner(board, userLetter));
         }
     }
 }
