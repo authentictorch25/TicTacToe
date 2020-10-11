@@ -7,6 +7,10 @@ namespace TicTacToe
 {
     public class TicTacToeGame
     {
+        public const int HEAD = 0;
+        public const int TAIL = 1;
+        public enum Player { USER, COMPUTER };
+
         public static char[] CreateBoard()
         {
             char[] board = new char[10];
@@ -50,5 +54,18 @@ namespace TicTacToe
             if (spaceFree)
                 board[cell] = letter; 
         }
+
+        public static Player GetWhoStartsFirst()
+        {
+            int toss = getOneFromRandomChoices(2);
+            return (toss == HEAD) ? Player.USER : Player.COMPUTER;
+        }
+         public static int getOneFromRandomChoices(int choices)
+        {
+            Random random = new Random();
+            return (int)(random.Next() * 10) % choices; 
+        }
+
+
     }
 }

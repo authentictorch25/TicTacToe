@@ -4,14 +4,15 @@ namespace TicTacToe
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to tictactoe game");
             char[] board = TicTacToeGame.CreateBoard();
-            char userLetter = TicTacToeGame.ChooseUserLetter();
             TicTacToeGame.DisplayBoard(board);
+            char userLetter = TicTacToeGame.ChooseUserLetter();         
             int userMove = TicTacToeGame.UserMove(board);
-            TicTacToeGame.MakeMove(board, userMove, userLetter);
+            TicTacToeGame.Player player = TicTacToeGame.GetWhoStartsFirst();
+            
         }
     }
 }
