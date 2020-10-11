@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 namespace TicTacToe
@@ -26,6 +27,22 @@ namespace TicTacToe
             Console.WriteLine("\n" + board[1] + " | " + board[2] + " | " + board[3]);
             Console.WriteLine("\n" + board[4] + " | " + board[5] + " | " + board[6]);
             Console.WriteLine("\n" + board[7] + " | " + board[8] + " | " + board[9]);
+        }
+        public static int UserMove(char[] board)
+        {
+            int[] availableCells = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            while (true)
+            {
+                Console.WriteLine("Enter the next move (1-9)!");
+                int cell = Convert.ToInt32(Console.ReadLine());
+                if (Array.Find<int>(availableCells, element => element == cell) != 0 && IsSpaceFree(board, cell))
+                    return cell;
+            }
+        }
+
+        public static bool IsSpaceFree(char[] board, int cell)
+        {
+            return board[cell] == ' ';
         }
     }
 }
