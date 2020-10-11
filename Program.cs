@@ -10,6 +10,8 @@ namespace TicTacToe
             char[] board = TicTacToeGame.CreateBoard();
             char userLetter = TicTacToeGame.ChooseUserLetter();
             TicTacToeGame.DisplayBoard(board);
+            int userMove = TicTacToeGame.UserMove(board);
+            TicTacToeGame.MakeMove(board, userMove, userLetter);
         }
     }
 }

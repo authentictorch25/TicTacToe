@@ -44,5 +44,11 @@ namespace TicTacToe
         {
             return board[cell] == ' ';
         }
+        public static void MakeMove(char[] board, int cell, char letter)
+        {
+            Boolean spaceFree = IsSpaceFree(board, cell);
+            if (spaceFree)
+                board[cell] = letter; 
+        }
     }
 }
